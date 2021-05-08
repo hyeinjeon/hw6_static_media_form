@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mainbox">
+<h1>Update You Blog</h1>
+<form action="{% url 'update' blog.id %}" method="post">
+    {%csrf_token%}
+    <p>제목: <input type="text" name="title" value="{{blog.post_title}}"></p>
+    <p>작성자: <input type="text" name="writer" value="{{blog.post_writer}}"></p>
+    본문: <textarea name="body" id="" cols="30" rows="10">{{blog.post_body}}</textarea>
+    <button type="submit">submit</button>
+</form>
+</div>
+{% endblock %}

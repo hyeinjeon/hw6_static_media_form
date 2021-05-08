@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mainbox">
+
+<h1>Writer Your Blog</h1>
+
+<form action="{%url 'create2' %}" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">submit</button>
+</form>
+</div>
+{% endblock %}

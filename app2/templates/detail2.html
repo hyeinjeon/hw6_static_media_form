@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mainbox">
+    <h1>{{post2.post2_title}}</h1>
+    <div>
+        작성자: {{post2.post2_writer}}
+        <br>
+        날짜: {{post2.post2_date}}
+    </div>
+    <hr>
+    {% if post2.image %}
+    <p><img src="{{ post2.image.url }}" alt="" width="70%" height="70%"></p>
+    {% endif %}
+    <p class="post_body">{{post2.post2_body}}</p>
+    <a href="{% url 'edit2' post2.id %}">edit</a>
+    <a href="{% url 'delete2' post2.id %}">delete</a>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="mainbox">
+    <h1>Second App</h1><br>
+    <a href="{% url 'main' %}">Go to App 1</a>
+    <div class="container">
+        {% for post in posts2 %}
+            <div class="post">
+            <h3>{{post.post2_title}}</h3>
+            <h5>{{post.post2_writer}}</h5>
+            <p class="summary">{{post.summary}}</p>
+            <a href="{% url 'detail2' post.id %}">!..more</a>
+            </div>
+        {% endfor %}
+        </div>
+</div>
+{% endblock %}
