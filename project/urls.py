@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from app1.views import main
 from app2.views import main2
+
 from django.conf import settings
 from django.conf.urls.static import static
 

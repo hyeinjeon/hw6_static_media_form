@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="mainbox">
+<div class="mainbox1">
     <h1>{{post2.post2_title}}</h1>
     <div>
         작성자: {{post2.post2_writer}}
@@ -11,6 +11,7 @@
     <hr>
     {% if post2.image %}
     <p><img src="{{ post2.image.url }}" alt="" width="70%" height="70%"></p>
+    <p><img src="{{ post.image_thumbnail.url }}"></p>
     {% endif %}
     <p class="post_body">{{post2.post2_body}}</p>
     <a href="{% url 'edit2' post2.id %}">edit</a>

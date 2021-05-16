@@ -1,18 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="mainbox">
-    <h1>Second App</h1><br>
+<div class="mainbox2">
+    <h1>Taemin</h1><br>
     <a href="{% url 'main' %}">Go to App 1</a>
+    <br><br>
     <div class="container">
         {% for post in posts2 %}
-            <div class="post">
-            <h3>{{post.post2_title}}</h3>
-            <h5>{{post.post2_writer}}</h5>
+        <span class="post2">
+            <p class="img">
+            {% if post.image %}
+            <img src="{{post.image_thumbnail.url}}">
+            {% endif %}
+            </p>
+            <div class="body2">
+            <h3>{{post.post2_title}} _ {{post.post2_writer}}</h3>
             <p class="summary">{{post.summary}}</p>
-            <a href="{% url 'detail2' post.id %}">!..more</a>
+            <a href="{% url 'detail2' post.id %}">..more</a>
+            <br>
             </div>
+        </span>
         {% endfor %}
-        </div>
+    </div>
 </div>
 {% endblock %}
